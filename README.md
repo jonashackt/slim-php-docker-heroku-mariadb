@@ -87,10 +87,22 @@ First add a [Profile](Procfile):
 web: vendor/bin/heroku-php-apache2 public/
 ```
 
+Here we can choose from 2 possible webservers: `heroku-php-apache2` or `heroku-php-nginx`.
+
 Since Slim serves the HTML/CSS/JavaScript from the `public` directory, we need to [set it as a document root](https://devcenter.heroku.com/articles/deploying-php#configuring-the-document-root).
 
-Now assuming you already created your Heroku account and installed `heroku CLI` (e.g. via `brew install heroku`), let's create a Heroku PHP app:
+Now assuming you already created your Heroku account and installed `heroku CLI` (e.g. via `brew install heroku`), let's create a Heroku PHP app (if you want to specify a name, `heroku create` is not enough):
 
 ```
-heroku create
+heroku apps:create slim-php-docker-heroku-mariadb
 ```
+
+With that a Heroku app is already created:
+
+![heroku-app-created](screenshots/heroku-app-created.png)
+
+Now to create a working deploy pipeline, we simply need to connect our Heroku app to our GitHub repository like this:
+
+![heroku-connect-to-github](screenshots/heroku-connect-to-github.png)
+
+and also configure `Automatic Deploys` with the `Wait for CI to pass before deploy` checkbox enabled, so that Heroku will automatically deploy our Slim PHP app every time, we push to our GitHub repository - and all Travis build succeeded.
