@@ -1,6 +1,6 @@
 # slim-php-docker-heroku-mariadb
 [![Build Status](https://travis-ci.org/jonashackt/slim-php-docker-heroku-mariadb.svg?branch=master)](https://travis-ci.org/jonashackt/slim-php-docker-heroku-mariadb)
-[![Deployed on Heroku](https://img.shields.io/badge/heroku-deployed-blueviolet.svg?logo=heroku&)](https://slim-php-docker-heroku-mariadb.herokuapp.com:8080)
+[![Deployed on Heroku](https://img.shields.io/badge/heroku-deployed-blueviolet.svg?logo=heroku&)](https://slim-php-docker-heroku-mariadb.herokuapp.com)
 
 Example project showing how to run a Slim framework based PHP app in Docker locally &amp; on Heroku incl. connection to MariaDB
 
@@ -106,3 +106,7 @@ Now to create a working deploy pipeline, we simply need to connect our Heroku ap
 ![heroku-connect-to-github](screenshots/heroku-connect-to-github.png)
 
 and also configure `Automatic Deploys` with the `Wait for CI to pass before deploy` checkbox enabled, so that Heroku will automatically deploy our Slim PHP app every time, we push to our GitHub repository - and all Travis build succeeded.
+
+With that our app should already be running on Heroku - just have a look at https://slim-php-docker-heroku-mariadb.herokuapp.com/: 
+
+![heroku-deployed-app](screenshots/heroku-deployed-app.png)
