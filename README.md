@@ -15,6 +15,23 @@ Install the PHP dependency management solution [composer](https://getcomposer.or
 brew install composer
 ```
 
+Install a PHP interpreter (see https://de.wikipedia.org/wiki/PHP#Funktionsweise). As PHP uses an interpreter, that is triggered by a webserver (see LAMP stack), it could be tedious to install the myriad of tools on your local machine. Also alternatives like [XAMPP](https://en.wikipedia.org/wiki/XAMPP) seem quite dusty.
+
+So why not use Docker as the interpreter/webserver runtime? As you may already noticed, a [docker-compose.yml](docker-compose.yml) is present in the root of the project. Start it with 
+
+```
+docker-compose up -d
+```
+
+If you have IntelliJ and want to run PHP Unit tests, install the [PHP Docker](https://plugins.jetbrains.com/plugin/8595-php-docker/) plugin.
+Then be sure to [configure a remote PHP interpreter according to the docs](https://www.jetbrains.com/help/idea/configuring-remote-interpreters.html). Therefore head over to Preferences/Languages & Frameworks / PHP:
+
+![php-interpreter-preferences](screenshots/php-interpreter-preferences.png)
+
+and configure your Docker Environment and finally the concrete Docker-Compose image:
+
+![php-interpreter-preferences-docker-compose](screenshots/php-interpreter-preferences-docker-compose.png)
+
 # PHP without a clue - how to start
 
 I have to admit, I've never done PHP before. But my students have to, so I need to know what they are talking about. Let's choose a decent PHP webframework like [Slim](https://github.com/slimphp/Slim), which look really nice and easy to start with!
