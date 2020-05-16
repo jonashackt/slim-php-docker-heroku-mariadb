@@ -21,7 +21,7 @@ services:
             - logs:/var/www/logs
     
     mariadb:
-        image: mariadb:10.5.1-bionic
+        image: mariadb:10.5.3-bionic
         environment:
             MYSQL_ROOT_PASSWORD: changeme
             MYSQL_DATABASE: slim_php
